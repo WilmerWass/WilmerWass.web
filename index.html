@@ -43,279 +43,97 @@
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
-<body class="dark-mode">
-
-    <!-- Matrix Overlay -->
-    <canvas id="matrix-canvas"></canvas>
-
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader-logo">
-            &lt;Wilmer.wass/dev&gt;
-        </div>
-        <div class="loader-bar-container">
-            <div class="loader-bar"></div>
-        </div>
-    </div>
-
-    <!-- Fondo de index01 -->
-    <div class="background-animation"></div>
-
-    <header>
-        <nav>
-            <div class="nav-brand">
-                <div class="status-dot"></div>
-                <img src="img/logo-C-blanco.png" class="nav-logo" id="main-logo" alt="Logo de WilmerWass">
-                <span>
-                    < WilmerWass.dev />
-                </span>
+<body>
+    <header class="header">
+        <div class="header-contenido">
+            <!-- logo -->
+            <div class="logo">
+                <span class="logo-icon">WS</span>
             </div>
-
-            <div class="nav-links">
-                <div class="nav-item active" onclick="showSection('perfil')"><i data-lucide="user"></i>
-                    <span>Perfil</span>
-                </div>
-                <div class="nav-item" onclick="showSection('proyectos')"><i data-lucide="layout"></i>
-                    <span>Proyectos</span>
-                </div>
-                <div class="nav-item" onclick="showSection('experiencia')"><i data-lucide="briefcase"></i>
-                    <span>Experiencia</span>
-                </div>
-                <div class="nav-item" onclick="showSection('formacion')"><i data-lucide="graduation-cap"></i>
-                    <span>Estudios</span>
-                </div>
-                <div class="nav-item" onclick="showSection('terminal')"><i data-lucide="terminal"></i>
-                    <span>Shell</span>
-                </div>
-                <div class="nav-item" onclick="showSection('contacto')"><i data-lucide="send"></i> <span>Contacto</span>
-                </div>
-            </div>
-
-            <button class="theme-toggle" id="themeBtn" aria-label="Cambiar Tema">
-                <img src="img/logo-C-blanco.png" class="theme-btn-img" id="theme-btn-logo" alt="Theme Icon">
-            </button>
-        </nav>
+            <!-- Menu de navegacion -->
+             <nav class="nav-menu">
+                <ul class="nav-lista">
+                    <!-- barra de navegacion -->
+                     <li> <a href="#inicio" class="nav-link active">Inicio</a></li>
+                     <li> <a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+                     <li> <a href="#proyectos" class="nav-link">Proyectos</a></li>
+                     <li> <a href="#horario" class="nav-link">Horario</a></li>
+                     <li> <a href="#contacto" class="nav-link">Contactame</a></li>
+                </ul>
+             </nav>
+        </div>
     </header>
+    <!-- Encabezado principal (Barra de navegación) -->
+    <header id="nav">
+        <img src="img/wass.jpg" alt="Wass">
+        <contenedor>
+            <h1>WILMER WASS</h1>
+            <h6>Técnico en sistemas & Desarrollador web en formación</h6>
+        </contenedor>
+    </header>
+    
+    <!-- Sección de contenido principal -->
+    <section id="contenido">
+        <!-- Imagen de presentación -->
+        <img src="img/wass.jpg" alt="Wass">
+        <p>
+            <!-- Texto de presentación personal -->
+            Desde que tengo memoria, la tecnología ha sido mi mayor pasión. Esa curiosidad natural por cómo funcionan las cosas me llevó a convertirme en un técnico informático y a adquirir conocimientos en reparación y mantenimiento de equipos.
+            Ahora, estoy llevando esa pasión un paso más allá al estudiar programación, con el objetivo de no solo arreglar, sino también construir. Mi experiencia como técnico me da una perspectiva única, permitiéndome entender las necesidades desde el nivel más básico.
+            Estoy en la búsqueda de oportunidades para aplicar mis habilidades combinadas y seguir evolucionando en el mundo de la informática.
+        </p>
+    </section>
 
-    <!-- Contenedor Principal (Con Tilt Effect) -->
-    <main class="container">
-
-        <!-- SECCIÓN: PERFIL -->
-        <section id="perfil" class="active">
-            <div class="grid-layout">
-                <!-- Sidebar de Perfil -->
-                <aside class="glass-card tilt-card reveal">
-                    <div class="profile-header">
-                        <div class="avatar-container">
-                            <img src="img/yo_en_ia_dev.png" class="avatar-cartoon" alt="Wilmer Dev Avatar">
-                            <img src="img/wass.jpg" class="avatar-real" alt="Wilmer Wass Foto Real">
-                        </div>
-                        <h1 class="name-title">Wilmer Solano</h1>
-                        <p class="role-tag">Systems & Web Dev</p>
-                    </div>
-
-                    <ul class="detail-list">
-                        <li><i data-lucide="calendar"></i> 23 años</li>
-                        <li><i data-lucide="mail"></i> wilmerwass@email.com</li>
-                        <li><i data-lucide="map-pin"></i> Córdoba, Colombia</li>
-                        <li><i data-lucide="languages"></i> Español / Inglés (A2)</li>
-                    </ul>
-
-                    <a href="cv.pdf" download class="btn-primary">
-                        <i data-lucide="file-down"></i> Descargar Hoja de Vida
-                    </a>
-                </aside>
-
-                <!-- Contenido Principal -->
-                <div class="content-area">
-                    <article class="glass-card tilt-card reveal delay-1" style="margin-bottom: 1.5rem;">
-                        <h2 class="section-title"><i data-lucide="user-plus"></i> Resumen Ejecutivo</h2>
-                        <p style="line-height: 1.7; opacity: 0.9;">
-                            Profesional Técnico en Sistemas e Informática especializado en la integración de
-                            <strong>soluciones web, soporte IT avanzado y automatización con IA</strong>.
-                        </p>
-                        <p style="line-height: 1.7; opacity: 0.9; margin-top: 1rem;">
-                            Con sólida experiencia en administración e-commerce y supervisión técnica, mi enfoque
-                            combina la eficiencia del hardware con la elegancia del desarrollo moderno.
-                        </p>
-                    </article>
-
-                    <div class="glass-card tilt-card reveal delay-2">
-                        <h3 class="section-title"><i data-lucide="cpu"></i> Experticia Técnica</h3>
-                        <div
-                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
-                            <div>
-                                <h4 style="font-size: 0.9rem; color: var(--secondary); margin-bottom: 0.5rem;">
-                                    Desarrollo</h4>
-                                <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JS
-                                    (ES6+)</span>
-                                <span class="tag">PHP</span><span class="tag">Bootstrap</span>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 0.9rem; color: var(--secondary); margin-bottom: 0.5rem;">Sistemas
-                                </h4>
-                                <span class="tag">Hardware</span><span class="tag">Redes</span>
-                                <span class="tag">Windows/Linux</span><span class="tag">Soporte IT</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN: PROYECTOS (CARRUSEL HORIZONTAL) -->
-        <section id="proyectos">
-            <h3 class="section-title"><i data-lucide="layout"></i> Galería de Innovación</h3>
-            <div class="projects-row">
-                <!-- Proyecto 1 -->
-                <article class="glass-card project-card tilt-card reveal">
-                    <div>
-                        <div class="project-img">
-                            <i data-lucide="shopping-cart"></i>
-                        </div>
-                        <h4 style="margin-bottom: 0.5rem; color: var(--primary);">E-commerce Dashboard</h4>
-                        <p style="font-size: 0.85rem; opacity: 0.8;">Plataforma completa de gestión para emprendimientos
-                            con control de stock.</p>
-                        <div style="margin-top: 1rem;">
-                            <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JS</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn-outline">Demo</a>
-                        <a href="#" class="btn-outline"><i data-lucide="github"></i> Código</a>
-                    </div>
-                </article>
-
-                <!-- Proyecto 2 -->
-                <div class="glass-card project-card tilt-card reveal delay-1">
-                    <div>
-                        <div class="project-img">
-                            <i data-lucide="cpu"></i>
-                        </div>
-                        <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Hardware Monitor API</h4>
-                        <p style="font-size: 0.85rem; opacity: 0.8;">Servicio en tiempo real para el monitoreo de
-                            temperatura y rendimiento.</p>
-                        <div style="margin-top: 1rem;">
-                            <span class="tag">Python</span><span class="tag">FastAPI</span><span
-                                class="tag">React</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn-outline">Demo</a>
-                        <a href="#" class="btn-outline"><i data-lucide="github"></i> Código</a>
-                    </div>
-                </div>
-
-                <!-- Proyecto 3 -->
-                <div class="glass-card project-card tilt-card reveal delay-2">
-                    <div>
-                        <div class="project-img">
-                            <i data-lucide="brain"></i>
-                        </div>
-                        <h4 style="margin-bottom: 0.5rem; color: var(--primary);">AI Assistant Shell</h4>
-                        <p style="font-size: 0.85rem; opacity: 0.8;">Interfaz de comandos inteligente para la gestión de
-                            tareas basada en LLM.</p>
-                        <div style="margin-top: 1rem;">
-                            <span class="tag">Node.js</span><span class="tag">OpenAI</span><span
-                                class="tag">Shell</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn-outline">Demo</a>
-                        <a href="#" class="btn-outline"><i data-lucide="github"></i> Código</a>
-                    </div>
-                </div>
-
-                <!-- Proyecto 4 (Espaciador/Próximamente) -->
-                <div class="glass-card project-card tilt-card"
-                    style="justify-content: center; align-items: center; border-style: dashed;">
-                    <i data-lucide="plus-circle" size="40" style="opacity: 0.3; margin-bottom: 1rem;"></i>
-                    <p style="opacity: 0.5;">Próximo Proyecto...</p>
-                </div>
-            </div>
-            <p style="text-align: center; color: var(--text-secondary); font-size: 0.8rem; margin-top: -1rem;">
-                <i data-lucide="mouse-pointer-2" size="12"></i> Desliza horizontalmente para explorar
-            </p>
-        </section>
-
-        <!-- SECCIÓN: EXPERIENCIA -->
-        <section id="experiencia">
-            <div class="glass-card tilt-card reveal">
-                <h3 class="section-title"><i data-lucide="history"></i> Trayectoria Laboral</h3>
-                <div style="border-left: 2px solid var(--primary); padding-left: 20px; position: relative;">
-                    <div style="margin-bottom: 2rem;" class="reveal delay-1">
-                        <h4 style="font-size: 1.2rem;">Administrador Web (Freelance)</h4>
-                        <p style="color: var(--primary); font-weight: 600;">Propia / Independiente | Actualidad</p>
-                        <p style="margin-top: 5px; opacity: 0.8;">Diseño, implementación y administración de plataformas
-                            E-commerce.</p>
-                    </div>
-                    <div class="reveal delay-2">
-                        <h4 style="font-size: 1.2rem;">Supervisor & Asesor de Sistemas</h4>
-                        <p style="color: var(--primary); font-weight: 600;">Empresarial | Actualidad</p>
-                        <p style="margin-top: 5px; opacity: 0.8;">Liderazgo operativo y gestión de infraestructura
-                            tecnológica crítica.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN: FORMACIÓN -->
-        <section id="formacion">
-            <div class="grid-layout">
-                <div class="glass-card tilt-card reveal">
-                    <h3 class="section-title"><i data-lucide="scroll"></i> Títulos</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <strong>Técnico Laboral</strong>
-                        <p style="font-size: 0.85rem; opacity: 0.8;">Soporte, Sistemas e Informática (TECNICOR)</p>
-                    </div>
-                    <div>
-                        <strong>Bachiller Académico</strong>
-                        <p style="font-size: 0.85rem; opacity: 0.8;">Institución Educativa INOBASOL (2022)</p>
-                    </div>
-                </div>
-                <div class="glass-card tilt-card reveal delay-1">
-                    <h3 class="section-title"><i data-lucide="award"></i> Certificaciones</h3>
-                    <ul style="list-style: none; font-size: 0.9rem;">
-                        <li style="margin-bottom: 10px;"><i data-lucide="check-circle" size="14"
-                                style="color:var(--primary)"></i> Bootcamp Programación (MinTIC 2025)</li>
-                        <li style="margin-bottom: 10px;"><i data-lucide="check-circle" size="14"
-                                style="color:var(--primary)"></i> Inteligencia Artificial (70h)</li>
-                        <li style="margin-bottom: 10px;"><i data-lucide="check-circle" size="14"
-                                style="color:var(--primary)"></i> Networking & Infraestructura</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN: TERMINAL -->
-        <section id="terminal">
-            <div class="glass-card">
-                <h3 class="section-title"><i data-lucide="terminal"></i> WilmerOS Shell v5.0 Master Edition</h3>
-                <div id="terminal-box">
-                    <div id="term-output">
-                        <pre style="color: var(--primary); font-size: 0.7rem; line-height: 1; margin-bottom: 20px;">
-██╗      ██╗██╗███╗   ███╗███████╗██████╗  ██████╗ ███████╗
-██║  ██╗ ██║██║████╗ ████║██╔════╝██╔══██╗██╔═██╗██╔════╝
-██║ ████╗██║██║██╔████╔██║█████╗  ██████╔╝██║   ██║███████╗
-██║██╔═██╗██║██║██║╚██╔╝██║██╔══╝  ██╔══██╗██║   ██║╚════██║
-╚███╔╝ ╚███╔╝██║██║ ╚═╝ ██║███████╗██║  ██║╚██████╔╝███████║
- ╚══╝   ╚══╝ ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
-</pre>
-                        <div style="color: #6366f1;">WilmerOS v6.0.0-LTS (Elite Edition)</div>
-                        <div style="font-size: 0.8rem; opacity: 0.7;">Type 'help' to see available commands. Mobile
-                            keyboard supported.</div>
-                        <br>
-                    </div>
-                    <div style="display: flex; gap: 8px; align-items: flex-start; flex-wrap: wrap;">
-                        <span
-                            style="color:var(--primary); font-weight: bold; white-space: nowrap;">root@wilmerwass:~#</span>
-                        <input type="text" id="term-input" spellcheck="false" autocomplete="off"
-                            style="background:none; border:none; color:white; outline:none; flex: 1; min-width: 150px; font-family:inherit; font-size: 1rem;">
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Sección de horarios (Tabla) -->
+    <section id="horario">
+        <h2>HORARIO</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Jornada</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mañana</td>
+                    <td>Trabajar</td>
+                    <td>Trabajar</td>
+                    <td>Trabajar</td>
+                    <td>Trabajar</td>
+                    <td>Dormir</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Tarde</td>
+                    <td>Trabajar</td>
+                    <td>Trabajar</td>
+                    <td>Trabajar</td>
+                    <td>Trabajar</td>
+                    <td>Trabajar</td>
+                    <td>Estudiar</td>
+                    <td>Dormir</td>
+                </tr>
+                <tr>
+                    <td>Noche</td>
+                    <td>Dormir</td>
+                    <td>Dormir</td>
+                    <td>Dormir</td>
+                    <td>Dormir</td>
+                    <td>Dormir</td>
+                    <td>Ver TV</td>
+                    <td>Ver TV</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
         <!-- SECCIÓN: CONTACTO -->
         <section id="contacto">
