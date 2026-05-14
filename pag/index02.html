@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WilmerWass.dev | Portfolio Profesional</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0F172A;
+            --card-bg: #1E293B;
+            --text: #F8FAFC;
+            --primary: #00C4CC;
+            --secondary: #C3E88D;
+            --border: #334155;
+            --accent: #6366f1;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .light-mode {
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text: #0F172A;
+            --primary: #008B91;
+            --secondary: #2D6A4F;
+            --border: #E2E8F0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(30, 41, 59, 0.9);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            box-sizing: border-box;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-brand {
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .brand-text::after { content: "<WilmerWass.dev />"; }
+
+        .status-dot {
+            width: 10px; height: 10px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #22c55e;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.6; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .nav-links {
+            display: flex; gap: 0.5rem;
+            background: var(--bg);
+            padding: 5px; border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .nav-item {
+            cursor: pointer; font-size: 0.85rem; font-weight: 600;
+            display: flex; align-items: center; gap: 8px;
+            padding: 8px 16px; border-radius: 8px;
+            transition: 0.3s; color: var(--text); opacity: 0.7;
+        }
+
+        .nav-item.active {
+            background: var(--primary); color: white; opacity: 1;
+        }
+
+        .theme-toggle {
+            background: var(--bg); border: 1px solid var(--border);
+            color: var(--text); cursor: pointer; padding: 10px;
+            border-radius: 12px; display: flex;
+        }
+
+        /* --- LAYOUT --- */
+        .main-content {
+            margin-top: 100px; padding: 2rem;
+            max-width: 1200px; margin-left: auto; margin-right: auto;
+        }
+
+        section { display: none; animation: fadeIn 0.4s ease-out; }
+        section.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .grid-layout { display: grid; grid-template-columns: 350px 1fr; gap: 2rem; }
+
+        /* --- CARDS --- */
+        .card {
+            background: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 24px; padding: 2rem; margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .profile-card {
+            background: linear-gradient(135deg, rgba(0, 196, 204, 0.08) 0%, rgba(30, 41, 59, 1) 100%);
+            border: 1px solid rgba(0, 196, 204, 0.25);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 1.4rem; margin-bottom: 1.5rem;
+            display: flex; align-items: center; gap: 12px; color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .tag {
+            background: rgba(0, 196, 204, 0.1); color: var(--primary);
+            padding: 5px 12px; border-radius: 8px; font-size: 0.75rem;
+            font-weight: 700; display: inline-block; margin: 3px;
+            border: 1px solid rgba(0, 196, 204, 0.1);
+        }
+
+        .experience-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .btn-cv {
+            background: var(--primary);
+            color: white; border: none; padding: 12px 20px;
+            border-radius: 14px; font-weight: 600; width: 100%;
+            margin-top: 20px; cursor: pointer; display: flex;
+            align-items: center; justify-content: center; gap: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-cv:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 950px) {
+            .grid-layout { grid-template-columns: 1fr; }
+            .nav-links { 
+                position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+                width: 92%; max-width: 450px; justify-content: space-around;
+                z-index: 2000; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            }
+            .nav-item span { display: none; }
+            .main-content { margin-top: 80px; margin-bottom: 100px; padding: 1.2rem; }
+        }
+
+        #terminal-box {
+            background: #020617; color: #10b981; font-family: 'Roboto Mono', monospace;
+            padding: 25px; border-radius: 20px; height: 400px; overflow-y: auto;
+            border: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand">
+            <div class="status-dot" title="Disponible para nuevos proyectos"></div>
+            <span class="brand-text"></span>
+        </div>
+        
+        <div class="nav-links">
+            <div class="nav-item active" onclick="showSection('perfil')"><i data-lucide="user"></i> <span>Perfil</span></div>
+            <div class="nav-item" onclick="showSection('experiencia')"><i data-lucide="briefcase"></i> <span>Experiencia</span></div>
+            <div class="nav-item" onclick="showSection('formacion')"><i data-lucide="graduation-cap"></i> <span>Estudios</span></div>
+            <div class="nav-item" onclick="showSection('terminal')"><i data-lucide="terminal"></i> <span>Shell</span></div>
+        </div>
+
+        <button class="theme-toggle" id="themeBtn"><i data-lucide="sun"></i></button>
+    </nav>
+
+    <main class="main-content">
+
+        <!-- SECTION: PROFILE & DATA -->
+        <section id="perfil" class="active">
+            <div class="grid-layout">
+                <aside>
+                    <div class="card profile-card" style="text-align: center;">
+                        <div style="position: relative; width: 140px; height: 140px; margin: 0 auto 20px;">
+                            <div style="width: 100%; height: 100%; background: #334155; border-radius: 40px; overflow: hidden; border: 4px solid var(--primary);">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Wilmer" alt="Wilmer Solano" style="width: 100%;">
+                            </div>
+                        </div>
+                        
+                        <h2 style="margin: 0; font-size: 1.8rem; letter-spacing: -0.5px;">Wilmer Solano</h2>
+                        <p style="color: var(--primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; margin-top: 8px;">
+                            Systems & Web Solutions
+                        </p>
+                        
+                        <div style="margin-top: 25px; text-align: left; border-top: 1px solid var(--border); padding-top: 20px;">
+                            <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-size: 0.85rem;">
+                                <i data-lucide="calendar" size="16" color="var(--primary)"></i> 
+                                <span>14 de abril de 2002 (23 años)</span>
+                            </div>
+                            <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-size: 0.85rem;">
+                                <i data-lucide="mail" size="16" color="var(--primary)"></i> 
+                                <span>wilmer.dev@email.com</span>
+                            </div>
+                            <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-size: 0.85rem;">
+                                <i data-lucide="map-pin" size="16" color="var(--primary)"></i> 
+                                <span>Córdoba, Colombia</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; font-size: 0.85rem;">
+                                <i data-lucide="heart" size="16" color="#ff4b2b"></i> 
+                                <span>Amante del aprendizaje</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-cv"><i data-lucide="file-down"></i> Descargar HV Completa</button>
+                    </div>
+
+                    <div class="card">
+                        <h4 style="margin-top: 0; font-size: 1rem; color: var(--primary);"><i data-lucide="languages" size="18"></i> Idiomas</h4>
+                        <div style="margin-top: 10px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 5px;">
+                                <span>Español</span> <span>Nativo</span>
+                            </div>
+                            <div style="height: 6px; background: var(--border); border-radius: 3px; margin-bottom: 15px;">
+                                <div style="width: 100%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 5px;">
+                                <span>Inglés</span> <span>A2 Certificable</span>
+                            </div>
+                            <div style="height: 6px; background: var(--border); border-radius: 3px;">
+                                <div style="width: 45%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="content">
+                    <div class="card">
+                        <h3 class="section-title"><i data-lucide="user-plus"></i> Resumen Ejecutivo</h3>
+                        <p style="line-height: 1.8; opacity: 0.95; font-size: 1.05rem;">
+                            Profesional Técnico en Sistemas e Informática con enfoque en la convergencia entre <strong>desarrollo web, gestión de proyectos y soporte IT</strong>. 
+                            Recientemente certificado en Programación (MinTIC) e Inteligencia Artificial, complementando una sólida base técnica en hardware y redes.
+                        </p>
+                        <p style="line-height: 1.8; opacity: 0.95; font-size: 1.05rem; margin-top: 15px;">
+                            Experiencia actual como <strong>Administrador Web Freelance</strong> (E-commerce) y en roles de <strong>Supervisor/Asesor de Sistemas</strong>, demostrando habilidades en liderazgo de equipos y resolución proactiva de problemas. Busco aplicar esta visión técnica y estética en roles de Desarrollador Web Junior o Analista de Sistemas.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="section-title"><i data-lucide="cpu"></i> Áreas de Experticia</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem;">
+                            <div style="padding: 1rem; border-radius: 15px; border: 1px solid var(--border); background: rgba(255,255,255,0.02);">
+                                <i data-lucide="layout" color="var(--primary)"></i>
+                                <h5 style="margin: 10px 0 5px;">Web Dev & E-commerce</h5>
+                                <p style="font-size: 0.8rem; opacity: 0.7;">Diseño, armado y gestión de plataformas de venta.</p>
+                            </div>
+                            <div style="padding: 1rem; border-radius: 15px; border: 1px solid var(--border); background: rgba(255,255,255,0.02);">
+                                <i data-lucide="settings" color="var(--secondary)"></i>
+                                <h5 style="margin: 10px 0 5px;">Infraestructura IT</h5>
+                                <p style="font-size: 0.8rem; opacity: 0.7;">Mantenimiento de hardware, software y redes.</p>
+                            </div>
+                            <div style="padding: 1rem; border-radius: 15px; border: 1px solid var(--border); background: rgba(255,255,255,0.02);">
+                                <i data-lucide="brain-circuit" color="#a78bfa"></i>
+                                <h5 style="margin: 10px 0 5px;">IA & Automatización</h5>
+                                <p style="font-size: 0.8rem; opacity: 0.7;">Implementación de soluciones basadas en LLM.</p>
+                            </div>
+                            <div style="padding: 1rem; border-radius: 15px; border: 1px solid var(--border); background: rgba(255,255,255,0.02);">
+                                <i data-lucide="users" color="#f472b6"></i>
+                                <h5 style="margin: 10px 0 5px;">Supervisión</h5>
+                                <p style="font-size: 0.8rem; opacity: 0.7;">Gestión de equipos y asesoría técnica empresarial.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: EXPERIENCE -->
+        <section id="experiencia">
+            <h3 class="section-title"><i data-lucide="history"></i> Trayectoria Laboral</h3>
+            <div class="card">
+                <div class="experience-item">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <h4 style="margin: 0; font-size: 1.2rem;">Administrador Web (Freelance)</h4>
+                            <p style="color: var(--primary); margin: 5px 0;">Propia / Independiente | Actualidad</p>
+                        </div>
+                        <span class="tag">Activo</span>
+                    </div>
+                    <ul style="font-size: 0.95rem; line-height: 1.6; opacity: 0.85;">
+                        <li>Creación y diseño completo de interfaces web para emprendimientos.</li>
+                        <li>Armado y configuración de plataformas e-commerce desde cero.</li>
+                        <li>Manejo y administración de bases de datos de productos y clientes.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <h4 style="margin: 0; font-size: 1.2rem;">Supervisor, Asesor y Sistemas</h4>
+                            <p style="color: var(--primary); margin: 5px 0;">[Empresa Actual] | Actualidad</p>
+                        </div>
+                    </div>
+                    <ul style="font-size: 0.95rem; line-height: 1.6; opacity: 0.85;">
+                        <li>Múltiples cargos de supervisión operativa y administrativa.</li>
+                        <li>Asesoría técnica para la toma de decisiones tecnológicas.</li>
+                        <li>Manejo integral de los sistemas de información de la compañía.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: EDUCATION & CERTIFICATIONS -->
+        <section id="formacion">
+            <h3 class="section-title"><i data-lucide="scroll"></i> Formación & Certificaciones</h3>
+            <div class="grid-layout" style="grid-template-columns: 1fr 1fr;">
+                <div class="card">
+                    <h4 style="color: var(--primary); margin-top: 0;">Títulos Académicos</h4>
+                    <div class="experience-item">
+                        <strong>Técnico Laboral por Competencias</strong>
+                        <p style="margin: 5px 0; font-size: 0.85rem;">Auxiliar de Soporte, Sistemas e Informática</p>
+                        <small>TECNICOR</small>
+                    </div>
+                    <div class="experience-item" style="border-left-color: var(--border);">
+                        <strong>Bachiller Académico</strong>
+                        <p style="margin: 5px 0; font-size: 0.85rem;">Institución Educativa INOBASOL</p>
+                        <small>Finalizado: Ago 2022</small>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4 style="color: var(--primary); margin-top: 0;">Certificaciones 2024-2025</h4>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div style="background: rgba(0,0,0,0.1); padding: 10px; border-radius: 10px; font-size: 0.85rem;">
+                            <i data-lucide="check-circle" size="14" color="var(--primary)"></i> <strong>Bootcamp Programación:</strong> MinTIC / UT (Oct 2025)
+                        </div>
+                        <div style="background: rgba(0,0,0,0.1); padding: 10px; border-radius: 10px; font-size: 0.85rem;">
+                            <i data-lucide="check-circle" size="14" color="var(--primary)"></i> <strong>Inteligencia Artificial (70h):</strong> Nov 2024
+                        </div>
+                        <div style="background: rgba(0,0,0,0.1); padding: 10px; border-radius: 10px; font-size: 0.85rem;">
+                            <i data-lucide="check-circle" size="14" color="var(--primary)"></i> <strong>Networking & Ingresos:</strong> Diplomado (70h)
+                        </div>
+                        <div style="background: rgba(0,0,0,0.1); padding: 10px; border-radius: 10px; font-size: 0.85rem;">
+                            <i data-lucide="check-circle" size="14" color="var(--primary)"></i> <strong>Manejo de Hardware:</strong> Taller (Ago 2024)
+                        </div>
+                        <div style="background: rgba(0,0,0,0.1); padding: 10px; border-radius: 10px; font-size: 0.85rem;">
+                            <i data-lucide="check-circle" size="14" color="var(--primary)"></i> <strong>Excel Básico:</strong> Taller Certificado (Sep 2024)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: TERMINAL -->
+        <section id="terminal">
+            <h3 class="section-title"><i data-lucide="terminal"></i> WilmerOS Shell v3.5</h3>
+            <div id="terminal-box">
+                <div id="term-output">WilmerOS Core 3.5.0-LTS (Cordoba_CO)<br>Sistema de archivos cargado satisfactoriamente.<br>Estado de red: Conectado (A2_English_Protocol)<br><br>Escribe 'help' para ver los comandos de sistema.<br><br></div>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <span style="color:var(--secondary); font-weight: bold;">➜</span>
+                    <input type="text" id="term-input" spellcheck="false" autocomplete="off" style="background:none; border:none; color:white; outline:none; width:100%; font-family:inherit; font-size: 1rem;">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            
+            document.querySelectorAll('.nav-item').forEach(btn => {
+                if(btn.getAttribute('onclick').includes(id)) btn.classList.add('active');
+            });
+            if(id === 'terminal') setTimeout(() => document.getElementById('term-input').focus(), 100);
+        }
+
+        // Theme Logic
+        const themeBtn = document.getElementById('themeBtn');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            themeBtn.innerHTML = isLight ? '<i data-lucide="moon"></i>' : '<i data-lucide="sun"></i>';
+            lucide.createIcons();
+        });
+
+        // Terminal Logic
+        const input = document.getElementById('term-input');
+        const output = document.getElementById('term-output');
+        input.addEventListener('keydown', (e) => {
+            if(e.key === 'Enter') {
+                const val = input.value.trim().toLowerCase();
+                let res = "";
+                
+                if(val === 'help') res = "Comandos: bio, experience, skills, studies, contact, clear";
+                else if(val === 'bio') res = "Wilmer Solano (2002). Técnico en Sistemas. Amante del aprendizaje y la tecnología.";
+                else if(val === 'experience') res = "Supervisor de Sistemas & Administrador Web Freelance.";
+                else if(val === 'skills') res = "Dev Web (HTML/JS/PHP), IA (70h), Networking, Hardware, Excel.";
+                else if(val === 'studies') res = "Técnico TECNICOR, Bootcamp MinTIC 2025, Diplomado Networking.";
+                else if(val === 'contact') res = "Email: wilmer.dev@email.com | Localización: Córdoba, CO.";
+                else if(val === 'clear') { output.innerHTML = ""; input.value = ""; return; }
+                else if(val !== "") res = `Comando '${val}' no encontrado. Intenta con 'help'.`;
+                
+                output.innerHTML += `<div><span style="color:var(--secondary)">➜</span> <span style="color:white">${val}</span></div>`;
+                if(res) output.innerHTML += `<div style="color:#10b981; margin: 5px 0 15px 15px; border-left: 2px solid #10b981; padding-left: 10px;">${res}</div>`;
+                input.value = "";
+                document.getElementById('terminal-box').scrollTop = output.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>

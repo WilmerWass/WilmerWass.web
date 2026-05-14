@@ -1,201 +1,173 @@
-/* -----
-   Estilos generales para el cuerpo de la página (body) Modifica la apariencia general de la página web
------------------------------- */
-body {
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(200, 200, 200);
-    color: rgb(0, 0, 0);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* ------------------------------
-   Estilos para la barra de navegación superior (#nav) Modifica el aspecto del encabezado principal de la página
------------------------------- */
-#nav {
-    width: 100%;
-    max-width: 900px;
-    background-color:rgb(100, 150, 150);
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction:row;
-    padding: 2.5rem 1rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    max-height: 90px;
-}
-contenedor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 20px;
-}
-
-/* ------------------------------
-   Estilos para los titulos de navegación (#nav a) Modifica la apariencia de los titulos en la barra de navegación
------------------------------- */
-#nav h1 {
-    font-size: 2.5rem;
-    color:rgb(250, 250, 250);
-    text-align: center;
-    font-weight: 800;
-    letter-spacing: -0.05em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    margin: 0;
-}
-#nav h6 {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: rgb(225, 225, 225);
-    letter-spacing: 0.03em;
-    margin-top: 0.5rem;
-    margin: 0;
-}
-#nav img {
-    flex-direction: row;
-    width: 100px;
-    height: 150px;
-    border-radius: 40%;
-    margin-bottom: 1rem;
-    border: 4px solid #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-/* ------------------------------
-estilo para adaptar diferentes pantallas
------------------------------- */
-@media (max-width: 640px) {
-    #nav h1 {
-        font-size: 3rem;
-    }
-    #nav h6 {
-        font-size: 1.25rem;
-    }
-}
 /*
-   Estilos para el contenido principal (#contenido) Modifica la presentación del contenido central de la página
------------------------------- */
-#contenido {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: rgba(225, 225, 225, 0.300);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    margin-top: 2rem;
-}
-/* ------------------------------
-   ajuste de parrafos dentro del contenido
------------------------------- */
-#contenido p {
-    max-width: 600px;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    color: rgb(50, 50, 50);
-}
-/* ------------------------------
-   Estilos para imágenes generales (img) Modifica las imágenes incluidas en el contenido
------------------------------- */
-img {
-    width: 150px;
-    height: 200px;
-    border-radius: 5pc;
-    padding: 10px;
-    border-radius: 40%;
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  CSS reorganizado:
+  1) :root (variables)
+  2) Base / Reset / Estructura
+  3) Navegación (nav)
+  4) Landing (principal)
+  5) Sobre mí / Portafolio
+  6) Footer
+  7) Overlay
+  8) Media queries (móvil / escritorio)
+*/
+
+/* ======================== */
+/* 1) Variables globales */
+/* ======================== */
+:root {
+  --color-primario: rgb(210, 171, 80);  /* Dorado palido*/
+  --color-secundario: rgb(5, 0, 15);    /* casi Morado*/
+  --color-fondo: rgb(5, 10, 20);        /* Azul oscuro */
+  --color-texto: rgb(197, 197, 197);    /* Gris claro */
+  --nav-height: 60px; /* altura del nav fijo */
 }
 
-/* ------------------------------
-   Estilos para el pie de página (#footer) Modifica el aspecto del footer de la página
------------------------------- */
-#footer {
-    width: 100%;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#footer p {
-    margin: 5px 0;
-}
-#footer a {
-    color: #00bcd4;
-    text-decoration: none;
-    margin: 0 8px;
-    transition: color 0.3s;
-}
-#footer a:hover {
-    color: #2d2820;
+/* ======================== */
+/* 2) Base / Reset / Estructura */
+/* ======================== */
+html {
+  scroll-behavior: smooth;
 }
 
-/* ------------------------------
-   Estilos para la tabla de horarios (table, th, td, tr) Modifica el aspecto de la tabla de horarios
------------------------------- */
-table {
-    width: 90%;
-    border-collapse: collapse;
-    margin: 2em auto;
-    font-size: 0.9em;
-}
-th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: center;
-}
-th {
-    background-color: rgb(39, 100, 100);
-    color: white;
-}
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* ------------------------------
-   Estilos para la sección de contacto (#contacto) Modifica el aspecto de la sección "CONTÁCTAME"
------------------------------- */
-#contacto {
-    width: 100%;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(39, 100, 100);
-    max-width: 900px;
+main.main {
+  /* Compensar la barra de navegación fija */
+  padding-top: calc(var(--nav-height) + 20px);
 }
 
-/* ------------------------------
-   Estilos para el formulario de contacto (form) Modifica el aspecto del formulario en la sección de contacto
------------------------------- */
-form {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 20px;
-    font-family: Arial, sans-serif;
+.header {
+  background-color: var(--color-fondo);
 }
 
-/* ------------------------------
-   Estilos de los elementos del formulario de contacto (#contacto label, #contacto input) Modifica la presentación de los labels e inputs del formulario
------------------------------- */
-#contacto label {
-    display: block;
-    margin-top: 8px;
-    font-weight: bold;
+.titulo { color: var(--color-primario); }
+.subtitulo { color: var(--color-texto); }
+
+/* ======================== */
+/* 3) Navegación */
+/* ======================== */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-secundario);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 3000;
+  height: var(--nav-height);
+  border-radius: 0 0 15px 15px;
 }
-#contacto input {
-    display: block;
-    margin-top: 8px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
+.logo {
+  font-size: 35px;
+  font-weight: bolder;
+  margin-left: 20px;
+  color: var(--color-primario);
+}
+.nav ul { list-style: none; gap: 20px; padding: 10px; }
+.nav ul li a { text-decoration: none; color: var(--color-texto); font-weight: bolder; }
+.nav-links { flex-direction: row; gap: 20px; position: static; background: none; box-shadow: none; border-radius: 0; padding: 0; }
+.menu-btn { display: none; }
+
+/* ======================== */
+/* 4) Landing (principal) */
+/* ======================== */
+.landing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  justify-items: center;
+  max-width: 95%;
+  /* restar la altura del nav para evitar que el grid ocupe toda la ventana y pegue contenido al borde */
+  height: calc(100vh - var(--nav-height) - 40px);
+  min-height: 400px;
+  margin: 0 auto;
+  padding: 20px 24px 24px 24px;
+  background-color: var(--color-fondo);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+.landing-col { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.landing-izq { align-items: flex-start; }
+.landing-nombre { font-size: 2.8rem; font-weight: bold; margin-bottom: 0.2rem; color: var(--color-primario); }
+.landing-rol { font-size: 1.6rem; font-weight: 600; margin-bottom: 0.2rem; color: var(--color-texto); }
+.landing-frase { font-size: 1.1rem; color: var(--color-texto); margin-bottom: 1rem; }
+.landing-btn {
+  display: inline-block; background: var(--color-primario); color: #fff; font-weight: bold; padding: 12px 32px; border-radius: 30px; text-decoration: none; font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(210,171,80,0.15); transition: background 0.2s, transform 0.2s; margin-top: 10px;
+}
+.landing-btn:hover { background: #bfa14c; transform: scale(1.05); }
+.landing-foto-circulo {
+  width: 260px; height: 260px; border-radius: 50%; background: #fff; box-shadow: 0 8px 32px rgba(210,171,80,0.18), 0 2px 8px rgba(0,0,0,0.10);
+  overflow: hidden; display: flex; align-items: center; justify-content: center; transition: box-shadow 0.3s, transform 0.3s;
+}
+.landing-foto-circulo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+.landing-foto-circulo:hover { box-shadow: 0 12px 40px rgba(210,171,80,0.28), 0 2px 8px rgba(0,0,0,0.10); transform: scale(1.07) rotate(-2deg); }
+.landing-der { align-items: flex-end; padding-bottom: 2.5rem; }
+.landing-porque { font-size: 1.2rem; margin-bottom: 1rem; color: var(--color-primario); }
+.landing-skills { display: flex; gap: 18px; margin-bottom: 1.2rem; list-style: none; padding: 0; }
+.landing-skills img { width: 40px; height: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); transition: transform 0.2s, box-shadow 0.2s; }
+.landing-skills img:hover { transform: scale(1.15) rotate(-6deg); box-shadow: 0 4px 16px rgba(210,171,80,0.18); }
+.landing-claim { font-size: 1rem; color: var(--color-texto); margin-top: 0.5rem; text-align: right; }
+
+/* Se eliminaron estilos de la sección 'Sobre mí' no usada en el HTML actual */
+
+/* ======================== */
+/* 6) Portafolio (cards) */
+/* ======================== */
+.portafolio { margin: 40px auto; max-width: 700px; background: var(--color-fondo, #f9f9f9); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); padding: 30px 24px; }
+.portafolio h2 { margin-bottom: 10px; font-size: 2rem; }
+.proyectos { display: flex; flex-direction: column; gap: 18px; }
+.proyecto { padding: 16px 12px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); background: #fff; }
+.proyecto h3 { margin-bottom: 6px; font-size: 1.2rem; }
+
+/* ======================== */
+/* 7) Footer */
+/* ======================== */
+footer { background-color: var(--color-secundario); text-align: center; padding: 32px 10px 24px 10px; position: static; width: 100%; color: var(--color-texto); border-radius: 15px 15px 0 0; margin-top: 60px; }
+.footer .redes { margin-top: 12px; display: flex; gap: 18px; justify-content: center; }
+.footer .redes a img { transition: transform 0.2s; }
+.footer .redes a:hover img { transform: scale(1.15); }
+
+/* ======================== */
+/* 8) Overlay (mobile menu) */
+/* ======================== */
+.menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 2000; opacity: 0; transition: opacity 180ms ease; pointer-events: none; }
+.menu-overlay.active { opacity: 1; pointer-events: auto; }
+
+/* ======================== */
+/* 9) Media queries */
+/* ======================== */
+@media (max-width: 900px) {
+  .landing-grid { grid-template-columns: 1fr 1fr; gap: 24px; min-height: 0; margin: 80px auto 0 auto; }
+  .landing-foto-circulo { width: 160px; height: 160px; }
+  /* ajustes responsive landing */
+}
+
+@media (max-width: 600px) {
+  /* Mobile nav menu */
+  .nav-links { display: none; flex-direction: column; gap: 12px; background: #fff; position: absolute; top: 60px; right: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.18); border-radius: 10px; padding: 18px 22px; z-index: 3001; min-width: 210px; transform-origin: top right; transform: scale(0.95); opacity: 0; transition: transform 180ms ease, opacity 180ms ease; }
+  .nav-links.active { display: flex; transform: scale(1); opacity: 1; }
+  .menu-btn { display: block; background: none; border: none; font-size: 2rem; cursor: pointer; color: #333; margin-left: auto; }
+  .nav .logo { font-size: 1.5rem; }
+
+  .landing-grid { grid-template-columns: 1fr; gap: 16px; padding: 18px 4px; margin: 40px auto 0 auto; }
+  .landing-col { align-items: center !important; text-align: center; }
+  .landing-foto-circulo { width: 110px; height: 110px; margin-bottom: 1rem; }
+  .landing-skills { justify-content: center; }
+  .landing-claim { text-align: center; }
+
+}
+
+@media screen and (min-width: 601px) {
+  .menu-btn { display: none; }
+  .nav-links { display: flex; flex-direction: row; gap: 20px; position: static; background: none; box-shadow: none; border-radius: 0; padding: 0; }
 }

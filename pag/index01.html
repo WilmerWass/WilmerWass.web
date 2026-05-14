@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Metadatos básicos para el navegador -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Portafolio Profesional | Wilmer Wass</title>
+
+    <!-- Descripción para motores de búsqueda (SEO) -->
+    <meta name="description"
+        content="Portafolio profesional y hoja de vida de Wilmer Wass. Desarrollador Full Stack y experto en tecnología.">
+
+    <!-- Enlace a nuestra hoja de estilos personalizada -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fuentes de Google (Tipografía) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Space+Grotesk:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Iconos de Font Awesome (para redes sociales y UI) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Fondo animado (controlado por CSS) -->
+    <div class="background-animation"></div>
+
+    <!-- Contenedor principal que centra el contenido -->
+    <main class="container">
+        <section class="hero">
+            <!-- Tarjeta con efecto de vidrio (Glassmorphism) -->
+            <div class="glass-card profile-card">
+
+                <!-- Encabezado del perfil: Avatar y Nombre -->
+                <div class="profile-header">
+                    <div class="avatar-placeholder">
+                        <!-- TODO: Puedes cambiar estas iniciales o reemplazar todo el <span> por una etiqueta <img> con tu foto -->
+                        <span style="font-family: 'Space Grotesk'; font-weight: bold;">WW</span>
+                    </div>
+
+                    <!-- El texto aquí se genera automáticamente con JavaScript (efecto máquina de escribir) -->
+                    <h1 id="typewriter"></h1>
+
+                    <p class="subtitle">Creando experiencias digitales de alto impacto</p>
+                </div>
+
+                <!-- Detalles profesionales -->
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Desarrollador Full Stack</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <span>Ingeniero de Software</span>
+                    </div>
+                    <!-- TODO: Agregar más detalles aquí si es necesario, como ubicación -->
+                </div>
+
+                <!-- Enlaces a Redes Sociales -->
+                <!-- TODO: IMPORTANTE - Reemplaza los href="..." con tus enlaces reales -->
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/wilmerwass" target="_blank" class="social-btn" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/wilmerwass" target="_blank" class="social-btn" title="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <!-- FALTA: Agregar enlace real de Twitter/X abajo -->
+                    <a href="#" target="_blank" class="social-btn" title="Twitter"><i
+                            class="fa-brands fa-twitter"></i></a>
+                    <a href="mailto:contacto@wilmerwass.com" class="social-btn" title="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="actions">
+                    <!-- Enlace de descarga del CV. -->
+                    <!-- FALTA: Asegúrate de tener un archivo llamado 'cv.pdf' en la carpeta del proyecto -->
+                    <a href="cv.pdf" download="CV_Wilmer_Wass.pdf" class="btn-primary">
+                        <i class="fa-solid fa-download"></i> Descargar Hoja de Vida
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Enlace al archivo de lógica JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

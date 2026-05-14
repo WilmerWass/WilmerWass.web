@@ -1,0 +1,42 @@
+### CONCEPTO DE DISEÑO Y ESTRUCTURA (REVISADO) - PORTAFOLIO WILMERWASS ###
+
+Este documento consolida las ideas recopiladas para crear una página web profesional, moderna e interactiva, ajustado según la última revisión.
+
+---
+
+#### 1. ESTRUCTURA GENERAL Y NAVEGACIÓN
+
+- **Diseño Principal:** Página de scroll **VERTICAL**. Es una estructura más intuitiva, amigable con el usuario y óptima para SEO.
+- **Barra de Navegación (Navbar):** En la parte superior habrá un menú de navegación claro y funcional, posiblemente fijo (sticky). Contendrá enlaces de texto a las secciones: "Sobre Mí", "Proyectos", "Contacto".
+- **Identidad Visual (Iconos Geométricos):** Las figuras geométricas (círculos, cuadrados) se usarán como **iconos decorativos** o de apoyo junto a los enlaces del menú o en los títulos de las secciones. Aportan identidad sin comprometer la usabilidad del menú.
+
+---
+
+#### 2. LA EXPERIENCIA DE ENTRADA (SE MANTIENE)
+
+- **Pantalla de Precarga:** Al entrar al sitio, se mantiene la animación de carga para dar una primera impresión profesional y tecnológica.
+    - **Visual:** Logo (@wilmerwass) y una barra de progreso o texto animado.
+
+---
+
+#### 3. LAS SECCIONES DE CONTENIDO
+
+- **Sección "Hero" (Inicio):** La primera vista de la página. Un diseño impactante con tu nombre, subtítulo y una clara invitación a hacer scroll hacia abajo.
+
+- **Sección "Proyectos" (EL FOCO INTERACTIVO):**
+    - **Scroll Horizontal:** Esta sección será la protagonista de la interactividad. Contendrá un **carrusel de scroll HORIZONTAL** donde cada elemento es la tarjeta de un proyecto.
+    - **Funcionalidad:** El usuario podrá desplazarse lateralmente para explorar tus trabajos de forma visual y atractiva.
+    - **Objetivo:** Mantenemos el efecto "wow" en un contexto más apropiado y funcional, como es una galería.
+
+- **Otras Secciones ("Sobre Mí", "Contacto"):** Serán secciones estándar dentro del scroll vertical de la página, con un diseño limpio y enfocado en el contenido.
+
+---
+
+#### RESUMEN DE LA EXPERIENCIA DE USUARIO (REVISADA):
+
+1.  **Carga:** Entra y ve una animación de precarga profesional.
+2.  **Aterriza:** Ve una sección de bienvenida impactante con un menú de navegación claro en la parte superior.
+3.  **Explora:** Hace scroll verticalmente para moverse por la página de forma natural.
+4.  **Interactúa:** Al llegar a la sección de "Proyectos", descubre y utiliza el carrusel horizontal para ver los trabajos.
+
+Este concepto revisado es más robusto, usable y profesional, manteniendo los elementos creativos que lo hacen destacar.
