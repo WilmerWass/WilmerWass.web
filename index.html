@@ -1,82 +1,55 @@
 <!DOCTYPE html>
-<html lang="es-CO"> <!-- idioma en que está escrita la página -->
-<head> <!-- sección que contiene información sobre la página, como el título, la codificación de caracteres y la configuración de la vista para dispositivos móviles -->
-
-    <meta charset="UTF-8"> <!-- codificación de caracteres utilizada en la página - permite mostrar caracteres especiales y acentos correctamente - aunque no se recomienda usar emojis en el código -->
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- configura la vista para dispositivos móviles, asegurando que la página se adapte al tamaño de la pantalla del dispositivo -->
-
-    <meta name="description" content="Bienvenido a mi sitio web personal, donde comparto mis proyectos, habilidades y experiencia en desarrollo web. Explora mi portafolio y descubre cómo puedo ayudarte a crear soluciones digitales innovadoras."> <!-- descripción de la página que se muestra en los resultados de búsqueda y ayuda a los motores de búsqueda a entender el contenido de la página -->
-    
-    <meta name="theme-color" content="#000000"> <!-- color del tema para navegadores compatibles, que puede afectar la apariencia de la barra de herramientas y otros elementos del navegador -->
-
+<html lang="es-CO"> 
+<head> 
+    <!-- SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Bienvenido a mi sitio web personal, donde comparto mis proyectos, habilidades y experiencia en desarrollo web. Explora mi portafolio y descubre cómo puedo ayudarte a crear soluciones digitales innovadoras.">
+    <meta name="theme-color" content="#000000"> 
     <meta name="keywords" content="WilmerWass, desarrollo web, portafolio, proyectos, habilidades, experiencia, soluciones digitales"> <!-- palabras clave relacionadas con el contenido de la página que pueden ayudar a los motores de búsqueda a indexar la página correctamente -->
-
-    <meta name="apple-mobile-web-app-title" content="WilmerWass"> <!-- título de la página para aplicaciones web en iOS -->
-
+    
+    <!-- metadatos para redes sociales -->
     <meta name="aplication-name" content="WilmerWass"> <!-- nombre de la aplicación para navegadores compatibles -->
-
     <meta property="og:title" content="WilmerWass"> <!-- título de la página para compartir en redes sociales -->
-
     <meta property="og:description" content="Bienvenido a mi sitio web personal, donde comparto mis proyectos, habilidades y experiencia en desarrollo web. Explora mi portafolio y descubre cómo puedo ayudarte a crear soluciones digitales innovadoras."> <!-- descripción de la página para compartir en redes sociales -->
-    
     <meta property="og:image" content="img/og-image.jpg"> <!-- imagen de la página para compartir en redes sociales -->
-
     <meta property="og:image:alt" content="Imagen de WilmerWass"> <!-- texto alternativo para la imagen de la página para compartir en redes sociales -->
-    
     <meta property="og:url" content="https://wilmerwass.github.io/WilmerWass.web/"> <!-- URL de la página para compartir en redes sociales -->
+    <!-- fin de metadatos para redes sociales -->
 
-    <title>WilmerWass</title> <!-- título de la página que se muestra en la pestaña del navegador y en los resultados de búsqueda -->
-
-    <link rel="stylesheet" href="css/style.css"> <!-- enlace a la hoja de estilos CSS que contiene los estilos para la página web -->
-
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon"> <!-- enlace al icono de la página que se muestra en la pestaña del navegador -->
-
-    <script src="js/main.js"></script> <!-- enlace al archivo JavaScript que contiene el código para la funcionalidad de la página web -->
-
-    <link rel="manifest" href="manifest.json"> <!-- enlace al archivo de manifiesto para aplicaciones web, que proporciona información sobre la aplicación y cómo debe comportarse cuando se instala en un dispositivo -->
-
-    <link rel="canonical" href="https://wilmerwass.github.io/WilmerWass.web/"> <!-- enlace canónico que indica la URL preferida para la página, lo que ayuda a evitar problemas de contenido duplicado en los motores de búsqueda -->
-
-    <link rel="alternate" href="https://wilmerwass.github.io/WilmerWass.web/EN/" hreflang="es-CO"> <!-- enlace alternativo para la versión en inglés de la página, lo que ayuda a los motores de búsqueda a mostrar la versión correcta de la página según el idioma del usuario -->
+    <title>WilmerWass</title> 
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"> 
+    <script src="js/main.js"></script> 
 
 </head>
-<body> <!-- sección que contiene el contenido visible de la página web -->
-    
-    <header> <!-- sección de encabezado que contiene el título y la navegación de la página -->
-
-        <nav> <!-- sección de navegación que contiene enlaces a diferentes secciones de la página -->
-
-            <!-- logo de la página que se muestra en la barra de navegación -->
-            <a href="#home" class="logo"> <!-- enlace a la sección "home" de la página, con la clase "logo" para aplicar estilos específicos -->
-                <img src="img/logo.png" alt="Logo de WilmerWass"> <!-- imagen del logo de la página, con un texto alternativo para mejorar la accesibilidad -->
+<body>
+    <header>
+        <nav>
+            <!-- logo de la página -->
+            <a href="#home" class="logo">
+                <img src="img/logo.png" alt="Logo de WilmerWass">
             </a>
-
-            <ul> <!-- lista de enlaces de navegación -->
-
-                <li> <!-- elemento de lista que contiene un enlace a la sección "Sobre mí" de la página -->
-                    <a href="#about">Sobre mí</a></li> <!-- enlace a la sección "Sobre mí" de la página -->
-
-                <li><a href="#projects">Proyectos</a></li> <!-- enlace a la sección "Proyectos" de la página -->
-
-                <li><a href="#contact">Contacto</a></li> <!-- enlace a la sección "Contacto" de la página -->
-
+            <ul>
+                <li> <a href="#home">Inicio</a></li> 
+                <li> <a href="#about">Sobre mí</a></li> 
+                <li> <a href="#projects">Proyectos</a></li>
+                <li> <a href="#contact">Contacto</a></li>
             </ul>
         </nav>
     </header>
-    <main> <!-- sección principal que contiene el contenido principal de la página web -->
+    
+    <main>
         <header>
-            <h1> 
-                WilmerWass
-            </h1>
+            <h1>WilmerWass</h1>
         </header>
-        
-        <section id="about"> <!-- sección con el id "about" que contiene información sobre la persona o el tema de la página -->
-             <h2>
-                Sobre mí
-            </h2>
+        <section id="about">
+            <h2>Sobre mí</h2>
             <p>
                 Soy un desarrollador web apasionado por crear soluciones digitales innovadoras. Con experiencia en HTML, CSS, JavaScript y frameworks modernos, me dedico a construir sitios web atractivos y funcionales. Mi objetivo es ayudar a las empresas a destacar en línea y ofrecer experiencias de usuario excepcionales.
+
+                Asesor Comercial y Técnico en Sistemas de 23 años, oriundo de Soledad, Atlántico. Integrando ventas consultivas con soluciones tecnológicas de alto impacto. Mi enfoque se centra en comprender las necesidades del cliente para ofrecer propuestas personalizadas que impulsen su éxito. Con habilidades en comunicación efectiva y gestión de proyectos, me esfuerzo por superar las expectativas y construir relaciones duraderas con mis clientes.
+
             </p>
         </section>
 
@@ -89,6 +62,19 @@
                 <li>Proyecto 2: Descripción breve del proyecto y enlace al sitio web o repositorio.</li>
                 <li>Proyecto 3: Descripción breve del proyecto y enlace al sitio web o repositorio.</li>
             </ul>
+            <slaider>
+                <div class="slide">
+                    <img src="img/project1.jpg" alt="Proyecto 1">
+                    <p>Descripción del Proyecto 1</p>
+                </div>
+                <div class="slide">
+                    <img src="img/project2.jpg" alt="Proyecto 2">
+                    <p>Descripción del Proyecto 2</p>
+                </div>
+                <div class="slide">
+                    <img src="img/project3.jpg" alt="Proyecto 3">
+                    <p>Descripción del Proyecto 3</p>
+                </div>
         </section>
 
         <section id="contact"> <!-- sección con el id "contact" que contiene información de contacto para la persona o el tema de la página -->

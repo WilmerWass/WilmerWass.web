@@ -1,4 +1,25 @@
-/* Aqui van los estilos CSS para la página web */
-/* Estilos generales para el cuerpo de la página */
+:root {
+--primary-color: #45e0e8; /* cian digital */
+--secondary-color: #c0c1ff; /* indigo suave */
+--tercer-color: #56e5a9; /* verde esmeralda / terminal t2 */
+--dorado-color: #D2AB50; /* dorado */
+--background-color: #0b1326; /* fondo oscuro */
+--black-ter-color: #020617; /* negro terciario / noche */
+--contenedor-color: #171f33; /* superficie de contenedor */
+--text-uno-color: #dae2fd; /* texto 01 / azulado */
+--text-dos-color: #94A3B8; /* variante sobre superficie (texto secundario) */
+--crystal-color: rgba(11, 19, 38, 0.85); /* cristal / semitransparente */
+--crystal-border-color: rgba(255, 255, 255, 0.08); /* borde de cristal */
+--glow-color: rgba(0, 196, 204, 0.4); /* brillo cian / aura D botones*/
+}
 
-
+header {
+    background-color: var(--contenedor-color);
+}
+body {
+    background-color: var(--background-color);
+    color: var(--text-uno-color);
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+}
