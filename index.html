@@ -1,168 +1,135 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO"> <!-- idioma en que está escrita la página -->
+<head> <!-- sección que contiene información sobre la página, como el título, la codificación de caracteres y la configuración de la vista para dispositivos móviles -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WilmerWass.dev | Portfolio Profesional Premium</title>
-
-    <!-- Metadatos SEO -->
-    <meta name="description"
-        content="Portafolio profesional de Wilmer Wass. Especialista en Desarrollo Full Stack, Sistemas e IA. Soluciones tecnológicas premium y diseño innovador.">
-    <meta name="keywords"
-        content="Wilmer Wass, Wilmer Solano, Desarrollador Web, Full Stack, IA, Técnico en Sistemas, Portafolio, Colombia">
-    <meta name="author" content="Wilmer Wass">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wilmerwass.dev/">
-    <meta property="og:title" content="WilmerWass.dev | Portafolio Profesional Premium">
-    <meta property="og:description"
-        content="Explora el ecosistema digital de Wilmer Wass. Desarrollo Full Stack e Innovación en Sistemas.">
-    <meta property="og:image" content="https://wilmerwass.dev/img/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://wilmerwass.dev/">
-    <meta property="twitter:title" content="WilmerWass.dev | Portafolio Profesional Premium">
-    <meta property="twitter:description" content="Explora el ecosistema digital de Wilmer Wass.">
-    <meta property="twitter:image" content="https://wilmerwass.dev/img/og-image.jpg">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/logo-C-blanco.png">
-
-    <!-- Iconos y Fuentes -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Space+Grotesk:wght@400;700&family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <header class="header">
-        <div class="header-contenido">
-            <!-- logo -->
-            <div class="logo">
-                <span class="logo-icon">WS</span>
-            </div>
-            <!-- Menu de navegacion -->
-             <nav class="nav-menu">
-                <ul class="nav-lista">
-                    <!-- barra de navegacion -->
-                     <li> <a href="#inicio" class="nav-link active">Inicio</a></li>
-                     <li> <a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
-                     <li> <a href="#proyectos" class="nav-link">Proyectos</a></li>
-                     <li> <a href="#horario" class="nav-link">Horario</a></li>
-                     <li> <a href="#contacto" class="nav-link">Contactame</a></li>
-                </ul>
-             </nav>
-        </div>
-    </header>
-    <!-- Encabezado principal (Barra de navegación) -->
-    <header id="nav">
-        <img src="img/wass.jpg" alt="Wass">
-        <contenedor>
-            <h1>WILMER WASS</h1>
-            <h6>Técnico en sistemas & Desarrollador web en formación</h6>
-        </contenedor>
-    </header>
+    <meta charset="UTF-8"> <!-- codificación de caracteres utilizada en la página - permite mostrar caracteres especiales y acentos correctamente - aunque no se recomienda usar emojis en el código -->
     
-    <!-- Sección de contenido principal -->
-    <section id="contenido">
-        <!-- Imagen de presentación -->
-        <img src="img/wass.jpg" alt="Wass">
-        <p>
-            <!-- Texto de presentación personal -->
-            Desde que tengo memoria, la tecnología ha sido mi mayor pasión. Esa curiosidad natural por cómo funcionan las cosas me llevó a convertirme en un técnico informático y a adquirir conocimientos en reparación y mantenimiento de equipos.
-            Ahora, estoy llevando esa pasión un paso más allá al estudiar programación, con el objetivo de no solo arreglar, sino también construir. Mi experiencia como técnico me da una perspectiva única, permitiéndome entender las necesidades desde el nivel más básico.
-            Estoy en la búsqueda de oportunidades para aplicar mis habilidades combinadas y seguir evolucionando en el mundo de la informática.
-        </p>
-    </section>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- configura la vista para dispositivos móviles, asegurando que la página se adapte al tamaño de la pantalla del dispositivo -->
 
-    <!-- Sección de horarios (Tabla) -->
-    <section id="horario">
-        <h2>HORARIO</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Jornada</th>
-                    <th>Lunes</th>
-                    <th>Martes</th>
-                    <th>Miércoles</th>
-                    <th>Jueves</th>
-                    <th>Viernes</th>
-                    <th>Sábado</th>
-                    <th>Domingo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Mañana</td>
-                    <td>Trabajar</td>
-                    <td>Trabajar</td>
-                    <td>Trabajar</td>
-                    <td>Trabajar</td>
-                    <td>Dormir</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Tarde</td>
-                    <td>Trabajar</td>
-                    <td>Trabajar</td>
-                    <td>Trabajar</td>
-                    <td>Trabajar</td>
-                    <td>Trabajar</td>
-                    <td>Estudiar</td>
-                    <td>Dormir</td>
-                </tr>
-                <tr>
-                    <td>Noche</td>
-                    <td>Dormir</td>
-                    <td>Dormir</td>
-                    <td>Dormir</td>
-                    <td>Dormir</td>
-                    <td>Dormir</td>
-                    <td>Ver TV</td>
-                    <td>Ver TV</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <meta name="description" content="Bienvenido a mi sitio web personal, donde comparto mis proyectos, habilidades y experiencia en desarrollo web. Explora mi portafolio y descubre cómo puedo ayudarte a crear soluciones digitales innovadoras."> <!-- descripción de la página que se muestra en los resultados de búsqueda y ayuda a los motores de búsqueda a entender el contenido de la página -->
+    
+    <meta name="theme-color" content="#000000"> <!-- color del tema para navegadores compatibles, que puede afectar la apariencia de la barra de herramientas y otros elementos del navegador -->
 
-        <!-- SECCIÓN: CONTACTO -->
-        <section id="contacto">
-            <div class="glass-card tilt-card reveal" style="text-align: center;">
-                <h2 class="section-title" style="justify-content: center;"><i data-lucide="send"></i> ¿Listo para
-                    innovar?</h2>
-                <p style="margin-bottom: 2rem; opacity: 0.8;">Estoy abierto a nuevas oportunidades y colaboraciones
-                    técnicas.</p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                    <a href="mailto:wilmerwass@email.com" class="btn-primary" style="margin-top:0;">
-                        <i data-lucide="mail"></i> Enviar Email
-                    </a>
-                    <a href="https://linkedin.com/in/wilmerwass" target="_blank" class="btn-outline">
-                        <i data-lucide="linkedin"></i> LinkedIn Profesional
-                    </a>
-                </div>
-            </div>
+    <meta name="keywords" content="WilmerWass, desarrollo web, portafolio, proyectos, habilidades, experiencia, soluciones digitales"> <!-- palabras clave relacionadas con el contenido de la página que pueden ayudar a los motores de búsqueda a indexar la página correctamente -->
+
+    <meta name="apple-mobile-web-app-title" content="WilmerWass"> <!-- título de la página para aplicaciones web en iOS -->
+
+    <meta name="aplication-name" content="WilmerWass"> <!-- nombre de la aplicación para navegadores compatibles -->
+
+    <meta property="og:title" content="WilmerWass"> <!-- título de la página para compartir en redes sociales -->
+
+    <meta property="og:description" content="Bienvenido a mi sitio web personal, donde comparto mis proyectos, habilidades y experiencia en desarrollo web. Explora mi portafolio y descubre cómo puedo ayudarte a crear soluciones digitales innovadoras."> <!-- descripción de la página para compartir en redes sociales -->
+    
+    <meta property="og:image" content="img/og-image.jpg"> <!-- imagen de la página para compartir en redes sociales -->
+
+    <meta property="og:image:alt" content="Imagen de WilmerWass"> <!-- texto alternativo para la imagen de la página para compartir en redes sociales -->
+    
+    <meta property="og:url" content="https://wilmerwass.github.io/WilmerWass.web/"> <!-- URL de la página para compartir en redes sociales -->
+
+    <title>WilmerWass</title> <!-- título de la página que se muestra en la pestaña del navegador y en los resultados de búsqueda -->
+
+    <link rel="stylesheet" href="css/style.css"> <!-- enlace a la hoja de estilos CSS que contiene los estilos para la página web -->
+
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"> <!-- enlace al icono de la página que se muestra en la pestaña del navegador -->
+
+    <script src="js/main.js"></script> <!-- enlace al archivo JavaScript que contiene el código para la funcionalidad de la página web -->
+
+    <link rel="manifest" href="manifest.json"> <!-- enlace al archivo de manifiesto para aplicaciones web, que proporciona información sobre la aplicación y cómo debe comportarse cuando se instala en un dispositivo -->
+
+    <link rel="canonical" href="https://wilmerwass.github.io/WilmerWass.web/"> <!-- enlace canónico que indica la URL preferida para la página, lo que ayuda a evitar problemas de contenido duplicado en los motores de búsqueda -->
+
+    <link rel="alternate" href="https://wilmerwass.github.io/WilmerWass.web/EN/" hreflang="es-CO"> <!-- enlace alternativo para la versión en inglés de la página, lo que ayuda a los motores de búsqueda a mostrar la versión correcta de la página según el idioma del usuario -->
+
+</head>
+<body> <!-- sección que contiene el contenido visible de la página web -->
+    
+    <header> <!-- sección de encabezado que contiene el título y la navegación de la página -->
+
+        <nav> <!-- sección de navegación que contiene enlaces a diferentes secciones de la página -->
+
+            <!-- logo de la página que se muestra en la barra de navegación -->
+            <a href="#home" class="logo"> <!-- enlace a la sección "home" de la página, con la clase "logo" para aplicar estilos específicos -->
+                <img src="img/logo.png" alt="Logo de WilmerWass"> <!-- imagen del logo de la página, con un texto alternativo para mejorar la accesibilidad -->
+            </a>
+
+            <ul> <!-- lista de enlaces de navegación -->
+
+                <li> <!-- elemento de lista que contiene un enlace a la sección "Sobre mí" de la página -->
+                    <a href="#about">Sobre mí</a></li> <!-- enlace a la sección "Sobre mí" de la página -->
+
+                <li><a href="#projects">Proyectos</a></li> <!-- enlace a la sección "Proyectos" de la página -->
+
+                <li><a href="#contact">Contacto</a></li> <!-- enlace a la sección "Contacto" de la página -->
+
+            </ul>
+        </nav>
+    </header>
+    <main> <!-- sección principal que contiene el contenido principal de la página web -->
+        <header>
+            <h1> 
+                WilmerWass
+            </h1>
+        </header>
+        
+        <section id="about"> <!-- sección con el id "about" que contiene información sobre la persona o el tema de la página -->
+             <h2>
+                Sobre mí
+            </h2>
+            <p>
+                Soy un desarrollador web apasionado por crear soluciones digitales innovadoras. Con experiencia en HTML, CSS, JavaScript y frameworks modernos, me dedico a construir sitios web atractivos y funcionales. Mi objetivo es ayudar a las empresas a destacar en línea y ofrecer experiencias de usuario excepcionales.
+            </p>
         </section>
 
+        <section id="projects"> <!-- sección con el id "projects" que contiene información sobre los proyectos realizados por la persona o el tema de la página -->
+            <h2>
+                Proyectos
+            </h2>
+            <ul>
+                <li>Proyecto 1: Descripción breve del proyecto y enlace al sitio web o repositorio.</li>
+                <li>Proyecto 2: Descripción breve del proyecto y enlace al sitio web o repositorio.</li>
+                <li>Proyecto 3: Descripción breve del proyecto y enlace al sitio web o repositorio.</li>
+            </ul>
+        </section>
+
+        <section id="contact"> <!-- sección con el id "contact" que contiene información de contacto para la persona o el tema de la página -->
+            <h2>
+                Contacto
+            </h2>
+            <p>
+                Puedes contactarme a través de mi correo electrónico: <a href="mailto:wilmerwass@gmail.com">wilmerwass@gmail.com</a>| o a través de mis redes sociales: <a href="https://www.linkedin.com/in/wilmerwass/">LinkedIn</a> | <a href="https://twitter.com/wilmerwass">Twitter</a>.
+            </p>
+        </section>
+
+        <section id="blog"> <!-- sección con el id "blog" que contiene información sobre el blog de la persona o el tema de la página -->
+            <h2>
+                Blog
+            </h2>
+            <p>
+                Próximamente, compartiré artículos y tutoriales relacionados con el desarrollo web, las mejores prácticas y las últimas tendencias en tecnología. ¡Mantente atento para más contenido interesante!
+            </p>
+        </section>
+
+        <section id="feedback" > <!-- sección con el id "feedback" que contiene un formulario para que los visitantes puedan enviar comentarios o preguntas a la persona o el tema de la página -->
+            <h2>
+                Feedback
+            </h2>
+            <form action="submit_feedback.php" method="post"> <!-- formulario que envía los datos a un archivo PHP para procesar el feedback -->
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required> <!-- campo de texto para el nombre del visitante, marcado como obligatorio -->
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required> <!-- campo de correo electrónico para el visitante, marcado como obligatorio -->
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea> <!-- área de texto para el mensaje del visitante, marcada como obligatoria -->
+
+                <button type="submit">Enviar</button> <!-- botón para enviar el formulario -->
+            </form>
     </main>
 
-    <footer style="text-align: center; padding: 2rem; opacity: 0.5; font-size: 0.8rem;">
-        <p>&copy; 2026 WilmerWass.dev - Diseñado con pasión en Córdoba, Colombia</p>
-        <p style="margin-top: 5px;">Built with HTML5, CSS3 & JavaScript Elite</p>
-    </footer>
+    <footer>
+        <p>&copy; 2026 WilmerWass. Todos los derechos reservados.</p> <!-- texto de copyright que se muestra en el pie de página -->
 
-    <!-- Scripts de Lógica y Juegos -->
-    <script src="js/snake.js"></script>
-    <script src="js/scripts.js"></script>
+    <!-- <script defer src="scripts/lightswitch.js"></script>-->
 </body>
-
 </html>
