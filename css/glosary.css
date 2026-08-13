@@ -1,0 +1,32 @@
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+header a:hover {
+    color: #FFD700;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    padding-top: 80px; /* Adjusted to account for the fixed header */
+}
+
